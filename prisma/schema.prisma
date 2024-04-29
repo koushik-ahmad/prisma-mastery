@@ -27,8 +27,8 @@ model User {
   email    String
   age      Int      @default(0)
   role     UserRole @default(user)
+  post     Post[]
   profile  Profile?
-  post     Post[] // one to many relation
 
   @@map("users")
 }
@@ -51,9 +51,9 @@ model Category {
 }
 
 model PostCategory {
-  postId Int
-  post   Post @relation(fields: [postId], references: [id])
-
+  postId     Int
+  post       Post     @relation(fields: [postId], references: [id])
+  
   categoryId Int
   category   Category @relation(fields: [categoryId], references: [id])
 

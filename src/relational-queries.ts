@@ -10,7 +10,7 @@ const relationalQueries = async () => {
         id: 1,
       },
     })
-    .Profile();
+    .profile();
 
   // relational filters
   const publishedPostUsers = await prisma.user.findMany({

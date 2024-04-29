@@ -27,14 +27,15 @@ const updates = async () => {
 
   const upsertData = await prisma.post.upsert({
     where: {
-      id: 32,
+      id: 2,
     },
     update: {
-      authorName: "Koushik",
+      content: "content 2",
     },
     create: {
       title: "Title 1",
       content: "content 1",
+      authorId: 2,
     },
   });
 
